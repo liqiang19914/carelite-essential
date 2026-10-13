@@ -1,0 +1,1 @@
+UPDATE public.membership_plans SET oem_branding_enabled = false WHERE code = 'enterprise';

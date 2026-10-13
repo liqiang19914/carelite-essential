@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public._fix_enterprise_rebuild();

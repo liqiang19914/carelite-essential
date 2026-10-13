@@ -1,0 +1,1 @@
+UPDATE public.managers SET updated_at = updated_at WHERE id = '7f38781c-9ff4-40fd-909d-d78e88266cbf';

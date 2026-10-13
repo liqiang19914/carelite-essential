@@ -1,0 +1,1 @@
+DELETE FROM merchant_consult_settings WHERE root_manager_id = 'a6f5c22f-33ec-411f-ad26-3777ebbb534e';

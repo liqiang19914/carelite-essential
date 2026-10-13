@@ -1,0 +1,1 @@
+UPDATE public.managers SET public_qa_enabled = TRUE, public_qa_welcome_message = '你好，我是韩老师的健康助手，养胃、肠道菌群、体检报告解读都可以问我～' WHERE id = 'a6f5c22f-33ec-411f-ad26-3777ebbb534e'

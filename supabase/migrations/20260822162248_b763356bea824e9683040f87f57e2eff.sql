@@ -1,0 +1,1 @@
+DELETE FROM public.products WHERE id = '8f7827db-7645-4901-85c8-f79cf41dee04';

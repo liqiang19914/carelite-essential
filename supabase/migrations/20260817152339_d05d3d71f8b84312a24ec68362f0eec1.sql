@@ -1,0 +1,1 @@
+ALTER TABLE public.manager_content_items DISABLE TRIGGER manager_content_items_before_write_trg;

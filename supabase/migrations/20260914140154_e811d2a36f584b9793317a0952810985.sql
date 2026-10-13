@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.admin_list_landing_conversion_events(timestamptz, timestamptz, integer) FROM anon;

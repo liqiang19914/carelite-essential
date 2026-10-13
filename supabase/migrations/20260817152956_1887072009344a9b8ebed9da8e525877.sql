@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public._backfill_content_enterprise_roots();

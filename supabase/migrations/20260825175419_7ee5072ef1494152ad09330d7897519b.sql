@@ -1,0 +1,1 @@
+DELETE FROM public.manager_public_qa_sessions WHERE visitor_token IN ('ent-verify-A-20260825', 'ent-verify-B-20260825');

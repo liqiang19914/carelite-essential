@@ -1,0 +1,1 @@
+COMMENT ON TABLE public.manager_content_items IS '商城内容表（资讯/画册）';

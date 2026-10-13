@@ -1,0 +1,1 @@
+DELETE FROM public.enterprise_qa_faqs WHERE id = 'f1f2f3f4-0000-4000-8000-000000003344' AND question = '你们的多模态测试问题是什么';

@@ -1,0 +1,1 @@
+UPDATE public.membership_plans SET enterprise_center_enabled = false WHERE code = 'advanced';

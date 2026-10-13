@@ -1,0 +1,58 @@
+CREATE OR REPLACE FUNCTION public.list_public_enterprise_managers(p_manager_id uuid DEFAULT NULL)
+RETURNS json
+LANGUAGE plpgsql
+STABLE SECURITY DEFINER
+SET search_path TO 'public'
+AS $function$
+DECLARE
+  v_root uuid;
+  v_result json;
+BEGIN
+  IF p_manager_id IS NULL THEN
+    SELECT value::uuid INTO v_root
+      FROM public.system_settings
+     WHERE key = 'platform_manager_root_id';
+  ELSE
+    SELECT COALESCE(p.parent_manager_id, p.id) INTO v_root
+    FROM public.profiles p
+    WHERE p.id = p_manager_id;
+  END IF;
+
+  IF v_root IS NULL THEN
+    RETURN '[]'::json;
+  END IF;
+
+  SELECT json_agg(
+    json_build_object(
+      'manager_id', m.id,
+      'short_code', m.short_code,
+      'display_name', COALESCE(NULLIF(m.partner_card_display_name, ''), ep.nickname, '健康管理师'),
+      'avatar_url', COALESCE(NULLIF(m.digital_avatar_image_url, ''), NULLIF(m.partner_card_avatar_url, ''), NULLIF(ep.avatar_url, '')),
+      'tagline', NULLIF(m.tagline, ''),
+      'intro_personal', NULLIF(m.intro_personal, ''),
+      'company_name', NULLIF(COALESCE(m.company_name, m.partner_card_company_name, m.business_name), ''),
+      'is_recommended', COALESCE(m.is_recommended, false),
+      'credentials', COALESCE(m.credentials, ARRAY[]::text[]),
+      'ai_enabled', COALESCE(m.public_qa_enabled, false),
+      'consultation_count', (
+        SELECT COUNT(DISTINCT q.visitor_token)
+        FROM public.manager_public_qa_sessions q
+        WHERE q.manager_id = m.id
+      )
+    )
+    ORDER BY COALESCE(m.is_recommended, false) DESC, ep.created_at ASC
+  ) INTO v_result
+  FROM public.profiles ep
+  JOIN public.managers m ON m.id = ep.id
+  WHERE ep.parent_manager_id = v_root
+    AND ep.role = 'manager'
+    AND ep.sub_role = 'health_manager'
+    AND ep.is_disabled = false
+    AND COALESCE(m.is_example, false) = false;
+
+  RETURN COALESCE(v_result, '[]'::json);
+END;
+$function$;
+
+REVOKE EXECUTE ON FUNCTION public.list_public_enterprise_managers(uuid) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.list_public_enterprise_managers(uuid) TO anon, authenticated;

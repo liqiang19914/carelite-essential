@@ -1,0 +1,2 @@
+INSERT INTO merchant_consult_settings (root_manager_id, channels, ai_manager_id, human_handoff_enabled, wecom_qr_url, wecom_acquisition_url, miniapp_contact_enabled)
+VALUES ('31685996-3218-4b31-bd05-7128beee7426', ARRAY['ai','miniapp_contact','wecom_qr','wecom_acquisition']::text[], '31685996-3218-4b31-bd05-7128beee7426', true, 'https://oss.example.com/qr-test.png', 'https://work.weixin.qq.com/ca/test', true);

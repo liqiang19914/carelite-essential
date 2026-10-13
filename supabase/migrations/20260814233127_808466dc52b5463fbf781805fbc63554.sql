@@ -1,0 +1,1 @@
+GRANT EXECUTE ON FUNCTION public.backfill_conversation_ownership() TO service_role;

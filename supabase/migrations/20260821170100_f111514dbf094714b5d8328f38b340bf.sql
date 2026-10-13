@@ -1,0 +1,1 @@
+UPDATE auth.users SET banned_until = 'infinity' WHERE email = 'sys-chronic-349861bf@kaitong.local' RETURNING email, banned_until;

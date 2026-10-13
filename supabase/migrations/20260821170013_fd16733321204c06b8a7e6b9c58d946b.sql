@@ -1,0 +1,2 @@
+UPDATE auth.users SET banned_until = 'infinity' WHERE email = 'platform-root@kaitong.local' AND banned_until IS NULL;
+UPDATE auth.users SET banned_until = 'infinity' WHERE email LIKE 'sys-%@kaitong.local' AND banned_until IS NULL;

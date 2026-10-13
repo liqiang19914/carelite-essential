@@ -1,0 +1,1 @@
+grant execute on function public.list_enterprise_manager_products(uuid) to authenticated;

@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.ensure_agent_for_manager(uuid) FROM anon, authenticated;

@@ -1,0 +1,1 @@
+UPDATE managers SET knowledge_index_id = NULL, knowledge_index_status = NULL, updated_at = NOW() WHERE id = 'a6f5c22f-33ec-411f-ad26-3777ebbb534e';

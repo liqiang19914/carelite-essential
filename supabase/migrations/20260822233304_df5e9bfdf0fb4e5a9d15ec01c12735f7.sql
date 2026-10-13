@@ -1,0 +1,1 @@
+drop function public.list_enterprise_manager_products(uuid);

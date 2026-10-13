@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "name": "carelite-essential",
+  "description": "CareLite Essential 健康师本地工作站技能清单",
+  "skills": [
+    {
+      "id": "client-summary",
+      "name": "客户概况统计",
+      "description": "统计活跃客户总数、本周新增与回收站数量",
+      "parameters": []
+    },
+    {
+      "id": "health-check",
+      "name": "健康档案速览",
+      "description": "按客户 ID 汇总健康档案列表与最近一次体征记录",
+      "parameters": [
+        { "name": "clientId", "description": "客户档案 ID（profiles.id）", "required": true }
+      ]
+    },
+    {
+      "id": "followup-suggest",
+      "name": "跟进提醒盘点",
+      "description": "列出已到期或今日应跟进的客户，输出跟进优先级建议",
+      "parameters": []
+    }
+  ]
+}

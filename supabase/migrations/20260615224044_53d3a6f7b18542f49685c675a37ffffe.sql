@@ -1,0 +1,1 @@
+UPDATE public.managers SET public_qa_enabled = FALSE WHERE id = 'a6f5c22f-33ec-411f-ad26-3777ebbb534e'

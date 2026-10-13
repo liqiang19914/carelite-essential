@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public.list_enterprise_qa_sessions(UUID, TEXT, TEXT, INTEGER, INTEGER);

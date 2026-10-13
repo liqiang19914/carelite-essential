@@ -1,0 +1,1 @@
+drop function if exists public.list_enterprise_manager_products(uuid);

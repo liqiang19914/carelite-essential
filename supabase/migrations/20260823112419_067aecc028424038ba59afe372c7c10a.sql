@@ -1,0 +1,1 @@
+update follow_up_records set reminded_at = null where id = 'ac759b22-b905-4836-a1c5-91dc0a9b6c2a';

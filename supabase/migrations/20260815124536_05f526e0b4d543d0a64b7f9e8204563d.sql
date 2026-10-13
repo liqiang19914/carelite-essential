@@ -1,0 +1,1 @@
+ALTER TABLE public.manager_miniapp_code_cache ADD COLUMN IF NOT EXISTS requested_by uuid;

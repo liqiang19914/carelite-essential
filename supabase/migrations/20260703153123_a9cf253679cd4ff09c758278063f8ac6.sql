@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.transfer_manager_clients(uuid, uuid) FROM anon;
