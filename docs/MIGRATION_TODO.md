@@ -245,3 +245,14 @@ Week 5: Phase 2C 健康师智能体 + DeepSeek 直连
 Week 6: Phase 3 设置层 + WorkBuddy 技能注册
 Week 7: Phase 4 Tauri CI + Skill 分支
 ```
+
+## v0.2.0 品牌与体验更新（2026-10-15）
+
+> ✅ 基于 v0.1.0 实机反馈完成四项改进：
+> - 品牌更名【小凯同学HMS】：brand.ts / tauri.conf.json（productName+窗口标题）/ package.json / index.html 同步更新，版本号 0.2.0
+> - 应用图标缺失修复：CapLink logo（webp）经 sharp 转 1024 app-icon.png + 256 public/logo.png，npm run icons 重生成 17 个桌面图标（清理 android/ios），index.html 补 favicon
+> - 新增 AppShell 顶部导航（logo + 客户管理/健康师智能体/平台用户/设置/开发指南 五入口），App.tsx 由裸路由改为布局路由包裹
+> - 新增 DevGuidePage 开发指南页（/guide）：开箱即用说明（自动建库/设置页配 Key）、WorkBuddy 技能开发（manifest/builtin/skills 分支）、CodeDesk 源码二开五步指引 + 常用命令表
+> - AssistantPanel 未配 Key 报错条追加「去配置」直达链接
+> - npm run build 通过（30.1s），v0.2.0 标签触发 CI 重新出包
+

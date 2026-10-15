@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUp, Check, Copy, Loader2, Sparkles, Square, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -183,7 +184,17 @@ export default function AssistantPanel({ clientContext, clientName }: AssistantP
       {/* 错误条 */}
       {error ? (
         <div className="mt-2 flex items-start justify-between gap-2 rounded-xl border border-destructive/20 bg-destructive/5 px-3 py-2 text-[11px] leading-relaxed text-destructive">
-          <span>{error}</span>
+          <span>
+            {error}
+            {error.includes("设置页") && (
+              <Link
+                to="/settings"
+                className="ml-1 font-medium underline underline-offset-2 hover:underline"
+              >
+                去配置
+              </Link>
+            )}
+          </span>
           <button
             type="button"
             className="shrink-0 font-medium underline-offset-2 hover:underline"
